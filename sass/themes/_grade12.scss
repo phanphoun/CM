@@ -1,0 +1,540 @@
+// ===========================================
+// _grade12.scss - Grade 12 Specific Styles
+// ===========================================
+
+// Grade 12 Theme: Warm Gradient
+// Colors: #ffecd2 to #fcb69f
+
+// Grade-specific page header
+.grade12-header {
+  @include gradient-background($grade12-gradient);
+  padding: $spacing-3xl 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="white" fill-opacity="0.1" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+  }
+}
+
+.grade12-header__content {
+  position: relative;
+  z-index: 1;
+}
+
+.grade12-header__title {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  margin-bottom: $spacing-md;
+  
+  @include respond(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.grade12-header__subtitle {
+  font-size: $font-size-lg;
+  font-weight: 400;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  @include respond(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+// Grade-specific lesson cards
+.grade12-lesson-card {
+  background: $card-background;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow-sm;
+  border-left: 4px solid #ffecd2;
+  transition: all $transition-base;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffecd2, #fcb69f);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $transition-base;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    border-left-color: #fcb69f;
+    
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.grade12-lesson-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+}
+
+.grade12-lesson-card__title {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: $text-color;
+  margin: 0;
+}
+
+.grade12-lesson-card__duration {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  
+  &::before {
+    content: '⏱️';
+    font-size: 0.875rem;
+  }
+}
+
+.grade12-lesson-card__description {
+  color: $text-secondary;
+  margin-bottom: $spacing-lg;
+  line-height: $line-height-relaxed;
+}
+
+.grade12-lesson-card__topics {
+  margin-bottom: $spacing-xl;
+}
+
+.grade12-lesson-card__topics-title {
+  font-size: $font-size-md;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: $spacing-sm;
+}
+
+.grade12-lesson-card__topics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-sm;
+}
+
+.grade12-lesson-card__topic-item {
+  background: rgba(255, 236, 210, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  border-left: 3px solid #ffecd2;
+  transition: all $transition-base;
+  
+  &:hover {
+    background: rgba(255, 236, 210, 0.2);
+    border-left-color: #fcb69f;
+    transform: translateX(4px);
+  }
+}
+
+.grade12-lesson-card__actions {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+// Grade-specific quiz section
+.grade12-quiz-section {
+  background: $card-background;
+  border-radius: $border-radius-lg;
+  padding: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+  box-shadow: $shadow-md;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 236, 210, 0.05), rgba(252, 182, 159, 0.05));
+    pointer-events: none;
+  }
+}
+
+.grade12-quiz-section__content {
+  position: relative;
+  z-index: 1;
+}
+
+.grade12-quiz-section__title {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: $spacing-lg;
+  text-align: center;
+}
+
+.grade12-quiz-section__subtitle {
+  font-size: $font-size-md;
+  color: $text-secondary;
+  margin-bottom: $spacing-xl;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grade12-quiz-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-lg;
+}
+
+.grade12-quiz-option {
+  background: $card-background;
+  border: 2px solid rgba(255, 236, 210, 0.3);
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  text-align: center;
+  transition: all $transition-base;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 236, 210, 0.1), rgba(252, 182, 159, 0.1));
+    opacity: 0;
+    transition: opacity $transition-base;
+  }
+  
+  &:hover {
+    border-color: #ffecd2;
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+  
+  &.selected {
+    border-color: #fcb69f;
+    background: linear-gradient(135deg, rgba(255, 236, 210, 0.15), rgba(252, 182, 159, 0.15));
+  }
+}
+
+.grade12-quiz-option__content {
+  position: relative;
+  z-index: 1;
+}
+
+.grade12-quiz-option__icon {
+  font-size: 3rem;
+  margin-bottom: $spacing-md;
+  display: block;
+}
+
+.grade12-quiz-option__title {
+  font-size: $font-size-lg;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: $spacing-sm;
+}
+
+.grade12-quiz-option__description {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  line-height: $line-height-relaxed;
+}
+
+.grade12-quiz-option__meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+  font-size: $font-size-xs;
+  color: $text-secondary;
+}
+
+.grade12-quiz-option__questions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  
+  &::before {
+    content: '📝';
+    font-size: 0.875rem;
+  }
+}
+
+.grade12-quiz-option__time {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  
+  &::before {
+    content: '⏱️';
+    font-size: 0.875rem;
+  }
+}
+
+// Grade-specific progress tracking
+.grade12-progress-section {
+  background: $card-background;
+  border-radius: $border-radius-lg;
+  padding: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+  box-shadow: $shadow-md;
+}
+
+.grade12-progress-section__title {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: $spacing-lg;
+  text-align: center;
+}
+
+.grade12-progress-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.grade12-progress-stat {
+  text-align: center;
+  padding: $spacing-lg;
+  background: linear-gradient(135deg, rgba(255, 236, 210, 0.1), rgba(252, 182, 159, 0.1));
+  border-radius: $border-radius-lg;
+  border: 1px solid rgba(255, 236, 210, 0.3);
+}
+
+.grade12-progress-stat__value {
+  font-size: $font-size-3xl;
+  font-weight: 800;
+  color: #ffecd2;
+  margin-bottom: $spacing-sm;
+  display: block;
+}
+
+.grade12-progress-stat__label {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grade12-progress-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-lg;
+}
+
+.grade12-progress-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  background: rgba(255, 236, 210, 0.05);
+  border-radius: $border-radius-md;
+  border-left: 3px solid #ffecd2;
+}
+
+.grade12-progress-item__icon {
+  font-size: 1.5rem;
+  color: #fcb69f;
+}
+
+.grade12-progress-item__content {
+  flex: 1;
+}
+
+.grade12-progress-item__title {
+  font-size: $font-size-md;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: 0.25rem;
+}
+
+.grade12-progress-item__progress {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.grade12-progress-item__bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 236, 210, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.grade12-progress-item__fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffecd2, #fcb69f);
+  border-radius: 3px;
+  transition: width $transition-base;
+}
+
+.grade12-progress-item__percentage {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: #ffecd2;
+  min-width: 45px;
+  text-align: right;
+}
+
+// Grade-specific animations
+.grade12-animate-stagger {
+  animation-delay: calc(var(--stagger-delay) * 0.1s);
+}
+
+.grade12-animate-fade-in-up {
+  animation: grade12FadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes grade12FadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Grade-specific responsive adjustments
+@include respond(sm) {
+  .grade12-header {
+    padding: $spacing-2xl 0;
+  }
+  
+  .grade12-header__title {
+    font-size: $font-size-3xl;
+  }
+  
+  .grade12-lesson-card__topics-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .grade12-quiz-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include respond(md) {
+  .grade12-header {
+    padding: $spacing-3xl 0;
+  }
+  
+  .grade12-header__title {
+    font-size: $font-size-4xl;
+  }
+  
+  .grade12-lesson-card__topics-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grade12-quiz-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include respond(lg) {
+  .grade12-header__title {
+    font-size: $font-size-5xl;
+  }
+  
+  .grade12-lesson-card__topics-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grade12-quiz-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Grade-specific achievement badges
+.grade12-achievement-badge {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: $font-size-sm;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: $shadow-sm;
+  
+  &::before {
+    content: '🏆';
+    font-size: 1rem;
+  }
+}
+
+.grade12-achievement-badge--gold {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #333;
+  
+  &::before {
+    content: '🥇';
+  }
+}
+
+.grade12-achievement-badge--silver {
+  background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+  color: #333;
+  
+  &::before {
+    content: '🥈';
+  }
+}
+
+.grade12-achievement-badge--bronze {
+  background: linear-gradient(135deg, #cd7f32, #e4a852);
+  color: white;
+  
+  &::before {
+    content: '🥉';
+  }
+}

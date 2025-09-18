@@ -1,0 +1,36 @@
+// ===========================================
+// _shared.scss - Shared Imports for All Pages
+// ===========================================
+
+// This file contains all common imports used across grade pages
+// Import this file instead of listing individual imports
+
+// 1. Variables and Configuration
+@import '_variables';
+
+// 2. Mixins and Functions
+@import '_mixins';
+
+// 3. Base Styles and Reset
+@import '../base/_base';
+
+// 4. Layout Components
+@import '../layout/_layout';
+
+// 5. Grid System
+@import '../base/_grid';
+
+// 6. Reusable Components
+@import '../components/_components';
+
+// ===========================================
+// Usage Instructions
+// ===========================================
+/*
+In grade-specific files, use:
+@import '../abstracts/_shared';
+@import '../themes/_grade[X]';
+
+This reduces code duplication and ensures consistency
+across all grade pages.
+*/

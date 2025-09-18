@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ថ្នាក់ទី៧ - គណិតវិទ្យាខ្មែរ</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/grade7.css">
+    <meta name="description" content="មេរៀនគណិតវិទ្យាថ្នាក់ទី៧ ជាមួយនឹងលំហាត់អន្តរកម្ម និងការធ្វើតេស្ត">
+    <meta name="keywords" content="គណិតវិទ្យាថ្នាក់ទី៧, មេរៀនគណិតវិទ្យា, លំហាត់, តេស្ត, ថ្នាក់ទី៧">
+</head>
+<body>
+    <!-- Fixed Header with Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html" class="nav__brand" aria-label="Khmer Math - Home">
+                    <div class="nav__brand-icon">គ</div>
+                    <span>Khmer Math</span>
+                </a>
+                
+                <ul class="nav__menu" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="../index.html" class="nav__link" role="menuitem">ទំព័រដើម</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="../index.html#grades" class="nav__link nav__link--active" role="menuitem" aria-haspopup="true">ថ្នាក់រៀន</a>
+                        <div class="nav__dropdown" role="menu" aria-label="Grade levels">
+                            <ul class="nav__dropdown-list">
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="grade7.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៧</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="grade8.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៨</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="grade9.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៩</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="grade10.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១០</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="grade11.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១១</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="grade12.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១២</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="../calculator.html" class="nav__link" role="menuitem">ម៉ាស៊ីនគិតលេខ</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="../index.html#about" class="nav__link" role="menuitem">អំពីយើង</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="../index.html#contact" class="nav__link" role="menuitem">ទំនាក់ទំនង</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__auth">
+                    <a href="../index.html#login" class="btn btn--outline" role="button">ចូលប្រើ</a>
+                    <a href="../index.html#register" class="btn btn--primary" role="button">ចុះឈ្មោះ</a>
+                </div>
+                
+                <button class="nav__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">ថ្នាក់ទី៧</h1>
+                <p class="page-header__subtitle">មេរៀនគណិតវិទ្យាសម្រាប់ថ្នាក់ទី៧</p>
+            </div>
+        </section>
+
+        <!-- Lessons Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title">មេរៀន</h2>
+                
+                <div class="lessons-grid">
+                    <!-- Lesson 1 -->
+                    <div class="lesson-card">
+                        <div class="lesson-card__header">
+                            <h3 class="lesson-card__title">មេរៀនទី១៖ ចំនួនគត់</h3>
+                            <span class="lesson-card__duration">៤៥ នាទី</span>
+                        </div>
+                        <div class="lesson-card__content">
+                            <p>រៀនពីចំនួនគត់ លេខវិជ្ជមាន និងលេខអវិជ្ជមាន ការប្រៀបធៀបចំនួនគត់ និងប្រមាណវិធីមូលធន៍។</p>
+                            <ul class="lesson-card__topics">
+                                <li>ការកំណត់ចំនួនគត់</li>
+                                <li>លេខវិជ្ជមាន និងអវិជ្ជមាន</li>
+                                <li>ការប្រៀបធៀបចំនួនគត់</li>
+                                <li>ប្រមាណវិធីមូលធន៍</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-card__actions">
+                            <button class="btn btn--primary" onclick="startLesson(1)">ចាប់ផ្តើមរៀន</button>
+                            <button class="btn btn--outline" onclick="viewExercises(1)">លំហាត់</button>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 2 -->
+                    <div class="lesson-card">
+                        <div class="lesson-card__header">
+                            <h3 class="lesson-card__title">មេរៀនទី២៖ ប្រមាណវិធីជាចំហាក់ចំកួក</h3>
+                            <span class="lesson-card__duration">៥០ នាទី</span>
+                        </div>
+                        <div class="lesson-card__content">
+                            <p>រៀនពីប្រមាណវិធីជាចំហាក់ចំកួក ការបន្ថែម ដក គុណ និងចែកប្រមាណវិធីជាចំហាក់ចំកួក។</p>
+                            <ul class="lesson-card__topics">
+                                <li>ការកំណត់ប្រមាណវិធីជាចំហាក់ចំកួក</li>
+                                <li>ការបន្ថែមប្រមាណវិធីជាចំហាក់ចំកួក</li>
+                                <li>ការដកប្រមាណវិធីជាចំហាក់ចំកួក</li>
+                                <li>ការគុណនិងចែកប្រមាណវិធីជាចំហាក់ចំកួក</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-card__actions">
+                            <button class="btn btn--primary" onclick="startLesson(2)">ចាប់ផ្តើមរៀន</button>
+                            <button class="btn btn--outline" onclick="viewExercises(2)">លំហាត់</button>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 3 -->
+                    <div class="lesson-card">
+                        <div class="lesson-card__header">
+                            <h3 class="lesson-card__title">មេរៀនទី៣៖ សមីការលីនេអ៊ែរ</h3>
+                            <span class="lesson-card__duration">៦០ នាទី</span>
+                        </div>
+                        <div class="lesson-card__content">
+                            <p>រៀនពីសមីការលីនេអ៊ែរមួយអញ្ញាតិ ការដោះស្រាយសមីការលីនេអ៊ែរ និងការអនុវត្តន៍។</p>
+                            <ul class="lesson-card__topics">
+                                <li>ការកំណត់សមីការលីនេអ៊ែរ</li>
+                                <li>ការដោះស្រាយសមីការលីនេអ៊ែរមួយអញ្ញាតិ</li>
+                                <li>ការអនុវត្តសមីការលីនេអ៊ែរ</li>
+                                <li>បញ្ហាពិសោធន៍</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-card__actions">
+                            <button class="btn btn--primary" onclick="startLesson(3)">ចាប់ផ្តើមរៀន</button>
+                            <button class="btn btn--outline" onclick="viewExercises(3)">លំហាត់</button>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 4 -->
+                    <div class="lesson-card">
+                        <div class="lesson-card__header">
+                            <h3 class="lesson-card__title">មេរៀនទី៤៖ ធរណីមាត្រមូលដ្ឋាន</h3>
+                            <span class="lesson-card__duration">៥៥ នាទី</span>
+                        </div>
+                        <div class="lesson-card__content">
+                            <p>រៀនពីរូបធរណីមាត្រមូលដ្ឋាន ការគណនាក្រលាផ្ទៃ និងបរិមាត្ររបស់រូបធរណីមាត្រ។</p>
+                            <ul class="lesson-card__topics">
+                                <li>ចតុកោណកែង និងការ៉េ</li>
+                                <li>ត្រីកោណ</li>
+                                <li>រង្វង់</li>
+                                <li>ការគណនាក្រលាផ្ទៃនិងបរិមាត្រ</li>
+                            </ul>
+                        </div>
+                        <div class="lesson-card__actions">
+                            <button class="btn btn--primary" onclick="startLesson(4)">ចាប់ផ្តើមរៀន</button>
+                            <button class="btn btn--outline" onclick="viewExercises(4)">លំហាត់</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section__title">តេស្តថ្នាក់ទី៧</h2>
+                <p class="section__subtitle">ធ្វើតេស្តដើម្បីវាស់វែងចំណេះដឹងរបស់អ្នក</p>
+                
+                <div class="quiz-options">
+                    <div class="quiz-card">
+                        <h3 class="quiz-card__title">តេស្តខ្លី</h3>
+                        <p class="quiz-card__description">១០ សំណួរ • ១៥ នាទី</p>
+                        <button class="btn btn--primary" onclick="startQuiz('short')">ចាប់ផ្តើមតេស្ត</button>
+                    </div>
+                    
+                    <div class="quiz-card">
+                        <h3 class="quiz-card__title">តេស្តមធ្យម</h3>
+                        <p class="quiz-card__description">២៥ សំណួរ • ៤៥ នាទី</p>
+                        <button class="btn btn--primary" onclick="startQuiz('medium')">ចាប់ផ្តើមតេស្ត</button>
+                    </div>
+                    
+                    <div class="quiz-card">
+                        <h3 class="quiz-card__title">តេស្តពេញ</h3>
+                        <p class="quiz-card__description">៥០ សំណួរ • ៩០ នាទី</p>
+                        <button class="btn btn--primary" onclick="startQuiz('full')">ចាប់ផ្តើមតេស្ត</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>គណិតវិទ្យាខ្មែរ</h3>
+                    <p>ការរៀនគណិតវិទ្យាជាភាសាខ្មែរ ងាយស្រួល និងគួរឱ្យចាប់អារម្មណ៍</p>
+                </div>
+                <div class="footer__section">
+                    <h3>ការតភ្ជាប់រហ័ស</h3>
+                    <ul class="footer__links">
+                        <li><a href="../index.html" class="footer__link">ទំព័រដើម</a></li>
+                        <li><a href="../index.html#grades" class="footer__link">ថ្នាក់រៀន</a></li>
+                        <li><a href="../index.html#quiz" class="footer__link">លំហាត់</a></li>
+                        <li><a href="../index.html#about" class="footer__link">អំពីយើង</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>ជំនួយ</h3>
+                    <ul class="footer__links">
+                        <li><a href="../index.html#contact" class="footer__link">ទំនាក់ទំនង</a></li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                        <li><a href="#" class="footer__link">គាំទ្របច្ចេកទេស</a></li>
+                        <li><a href="#" class="footer__link">ការកែប្រែ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>អាកប្បកិរិយា</h3>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">គោលនយោបាយភាពឯកជន</a></li>
+                        <li><a href="#" class="footer__link">លក្ខខណ្ឌសេវា</a></li>
+                        <li><a href="#" class="footer__link">អំពី Cookie</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; ២០២៥ គណិតវិទ្យាខ្មែរ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+    <script src="../js/grade7.js"></script>
+</body>
+</html>

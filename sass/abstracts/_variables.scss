@@ -1,0 +1,110 @@
+// ===========================================
+// _variables.scss - Design System Variables
+// ===========================================
+
+// Khmer Education Brand Colors - WCAG AA Compliant
+$color-primary: #1e40af;        // Deep blue - traditional education
+$color-secondary: #dc2626;      // Khmer red - cultural significance
+$color-accent: #059669;         // Success green - achievement
+$color-warning: #d97706;        // Orange - attention/warning
+$color-info: #0891b2;          // Cyan - information
+
+// Neutral Color Palette
+$color-text-primary: #1f2937;   // Dark gray - main text
+$color-text-secondary: #6b7280; // Medium gray - secondary text
+$color-text-light: #9ca3af;     // Light gray - muted text
+$color-background: #ffffff;     // White - main background
+$color-background-alt: #f9fafb; // Light gray - alternate sections
+$color-background-dark: #111827; // Dark - footer/modal backgrounds
+$color-border: #e5e7eb;         // Light gray - borders
+$color-border-dark: #374151;    // Dark gray - dark theme borders
+
+// Gamification Colors
+$color-gold: #f59e0b;           // Gold badges
+$color-silver: #6b7280;         // Silver badges
+$color-bronze: #92400e;         // Bronze badges
+
+// Typography Scale - Responsive Design
+$font-family-primary: 'Noto Sans Khmer', 'Segoe UI', Arial, sans-serif;
+$font-family-math: 'Computer Modern', 'Times New Roman', serif;
+$font-size-xs: 0.75rem;         // 12px
+$font-size-sm: 0.875rem;        // 14px
+$font-size-base: 1rem;          // 16px
+$font-size-lg: 1.125rem;        // 18px
+$font-size-xl: 1.25rem;         // 20px
+$font-size-2xl: 1.5rem;         // 24px
+$font-size-3xl: 1.875rem;       // 30px
+$font-size-4xl: 2.25rem;        // 36px
+$font-size-5xl: 3rem;           // 48px
+
+// Spacing Scale - Consistent Rhythm
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+
+// Responsive Breakpoints
+$breakpoint-sm: 640px;   // Small tablets
+$breakpoint-md: 768px;   // Tablets
+$breakpoint-lg: 1024px;  // Desktop
+$breakpoint-xl: 1280px;  // Large desktop
+
+// Container Constraints
+$container-max-width: 1200px;
+$container-padding: $spacing-md;
+
+// Animation and Transitions
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index Scale
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-modal: 1000;
+$z-notification: 1100;
+
+// Grade-specific gradient themes
+$grade7-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$grade8-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+$grade9-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+$grade10-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+$grade11-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+$grade12-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+
+// ===========================================
+// Grade-Specific Color Variables
+// ===========================================
+
+// Grade 7 Colors - Purple Theme
+$grade7-primary: #667eea;
+$grade7-secondary: #764ba2;
+$grade7-accent: #8b5cf6;
+
+// Grade 8 Colors - Pink Theme
+$grade8-primary: #f093fb;
+$grade8-secondary: #f5576c;
+$grade8-accent: #ec4899;
+
+// Grade 9 Colors - Blue Theme
+$grade9-primary: #4facfe;
+$grade9-secondary: #00f2fe;
+$grade9-accent: #0ea5e9;
+
+// Grade 10 Colors - Coral Theme
+$grade10-primary: #fa709a;
+$grade10-secondary: #fee140;
+$grade10-accent: #f97316;
+
+// Grade 11 Colors - Soft Theme
+$grade11-primary: #a8edea;
+$grade11-secondary: #fed6e3;
+$grade11-accent: #06b6d4;
+
+// Grade 12 Colors - Warm Theme
+$grade12-primary: #ffecd2;
+$grade12-secondary: #fcb69f;
+$grade12-accent: #fb923c;

@@ -1,0 +1,194 @@
+// ===========================================
+// _layout.scss - Main Layout Components
+// ===========================================
+
+// Main Content Area
+.main {
+  margin-top: 80px; /* Account for fixed header */
+  min-height: calc(100vh - 80px);
+}
+
+// Hero Section
+.hero {
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  color: white;
+  padding: $spacing-3xl 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="white" fill-opacity="0.1" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title {
+  font-size: $font-size-5xl;
+  margin-bottom: $spacing-lg;
+  font-weight: 800;
+  
+  @include respond(md) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.hero__subtitle {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-2xl;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include respond(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.hero__cta {
+  display: inline-block;
+  background-color: white;
+  color: $color-primary;
+  padding: $spacing-lg $spacing-2xl;
+  font-size: $font-size-lg;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all $transition-base;
+  
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: $color-primary;
+  }
+}
+
+// Section Styling
+.section {
+  padding: $spacing-3xl 0;
+}
+
+.section--alt {
+  background-color: $color-background-alt;
+}
+
+.section__title {
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+  color: $color-text-primary;
+}
+
+.section__subtitle {
+  text-align: center;
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-2xl;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Footer
+.footer {
+  background-color: $color-background-dark;
+  color: white;
+  padding: $spacing-3xl 0 $spacing-xl 0;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+}
+
+.footer__section {
+  h3 {
+    color: white;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.footer__links {
+  list-style: none;
+}
+
+.footer__link {
+  display: block;
+  color: #9ca3af;
+  padding: $spacing-xs 0;
+  transition: color $transition-fast;
+  
+  &:hover,
+  &:focus {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: $spacing-xl;
+  border-top: 1px solid $color-border-dark;
+  color: #9ca3af;
+}
+
+// Responsive Image
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Loading States
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-border;
+  border-radius: 50%;
+  border-top-color: $color-primary;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// Mobile-first responsive adjustments
+@include respond(sm) {
+  .chatbot {
+    width: calc(100vw - 20px);
+    right: 10px;
+    left: 10px;
+  }
+  
+  .nav__auth {
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+  
+  .badges {
+    gap: $spacing-md;
+  }
+  
+  .badge {
+    width: 60px;
+    height: 60px;
+    font-size: $font-size-lg;
+  }
+}

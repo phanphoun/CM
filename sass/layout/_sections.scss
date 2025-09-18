@@ -1,0 +1,532 @@
+// ===========================================
+// _sections.scss - Page Section Components
+// ===========================================
+
+// Grade Cards
+.grades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-lg;
+  margin-top: $spacing-2xl;
+}
+
+.grade-card {
+  background-color: $color-background;
+  border-radius: 12px;
+  padding: $spacing-xl;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all $transition-base;
+  text-align: center;
+  border: 2px solid transparent;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: $color-primary;
+  }
+}
+
+.grade-card__number {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  color: $color-primary;
+  margin-bottom: $spacing-md;
+}
+
+.grade-card__title {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-md;
+  color: $color-text-primary;
+}
+
+.grade-card__description {
+  color: $color-text-secondary;
+  margin-bottom: $spacing-lg;
+}
+
+// Quiz Section
+.quiz {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz__question {
+  background-color: $color-background;
+  border-radius: 12px;
+  padding: $spacing-xl;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: $spacing-lg;
+}
+
+.quiz__question-title {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-lg;
+  color: $color-text-primary;
+}
+
+.quiz__options {
+  list-style: none;
+}
+
+.quiz__option {
+  margin-bottom: $spacing-md;
+}
+
+.quiz__option-label {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  background-color: $color-background-alt;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all $transition-base;
+  border: 2px solid transparent;
+  
+  &:hover {
+    background-color: $color-background;
+    border-color: $color-primary;
+  }
+}
+
+.quiz__option-input {
+  margin: 0;
+}
+
+// Progress Tracking
+.progress-tracker {
+  background-color: $color-background;
+  border-radius: 12px;
+  padding: $spacing-xl;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress-tracker__title {
+  margin-bottom: $spacing-lg;
+  color: $color-text-primary;
+}
+
+.progress-bar {
+  background-color: $color-background-alt;
+  border-radius: 20px;
+  height: 20px;
+  margin-bottom: $spacing-md;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, $color-accent, $color-primary);
+  border-radius: 20px;
+  transition: width $transition-slow;
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $color-border;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.progress-item__status {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $color-accent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+  font-weight: bold;
+  
+  &--incomplete {
+    background-color: $color-border;
+  }
+}
+
+// Gamification Elements
+.badges {
+  display: flex;
+  gap: $spacing-lg;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: $spacing-2xl 0;
+}
+
+.badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-2xl;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  transition: transform $transition-base;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  &--gold {
+    background: linear-gradient(135deg, $color-gold, #fbbf24);
+  }
+  
+  &--silver {
+    background: linear-gradient(135deg, $color-silver, #9ca3af);
+  }
+  
+  &--bronze {
+    background: linear-gradient(135deg, $color-bronze, #d97706);
+  }
+}
+
+.badge__tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $color-background-dark;
+  color: white;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 4px;
+  font-size: $font-size-xs;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-base;
+}
+
+.badge:hover .badge__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+// Leaderboard
+.leaderboard {
+  background-color: $color-background;
+  border-radius: 12px;
+  padding: $spacing-xl;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard__title {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  color: $color-text-primary;
+}
+
+.leaderboard__list {
+  list-style: none;
+}
+
+.leaderboard__item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border-bottom: 1px solid $color-border;
+  transition: background-color $transition-fast;
+  
+  &:hover {
+    background-color: $color-background-alt;
+  }
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.leaderboard__rank {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: $font-size-sm;
+  
+  &--first {
+    background-color: $color-gold;
+  }
+  
+  &--second {
+    background-color: $color-silver;
+  }
+  
+  &--third {
+    background-color: $color-bronze;
+  }
+}
+
+.leaderboard__name {
+  flex: 1;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.leaderboard__score {
+  font-weight: bold;
+  color: $color-primary;
+}
+
+// Study Tips Carousel
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: $color-background;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel__content {
+  display: flex;
+  transition: transform $transition-base;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  padding: $spacing-xl;
+  text-align: center;
+  
+  h3 {
+    color: $color-primary;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.carousel__controls {
+  position: absolute;
+  bottom: $spacing-md;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.carousel__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: $color-border;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+  
+  &--active {
+    background-color: $color-primary;
+  }
+}
+
+// Chatbot Widget
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  background-color: $color-background;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: $z-modal;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-base;
+  
+  &--active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.chatbot__header {
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  color: white;
+  padding: $spacing-md;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbot__title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.chatbot__close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: $font-size-lg;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot__messages {
+  height: 300px;
+  overflow-y: auto;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.chatbot__message {
+  max-width: 80%;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 18px;
+  font-size: $font-size-sm;
+  line-height: 1.4;
+  
+  &--user {
+    align-self: flex-end;
+    background-color: $color-primary;
+    color: white;
+  }
+  
+  &--bot {
+    align-self: flex-start;
+    background-color: $color-background-alt;
+    color: $color-text-primary;
+  }
+}
+
+.chatbot__input-area {
+  display: flex;
+  padding: $spacing-md;
+  border-top: 1px solid $color-border;
+}
+
+.chatbot__input {
+  flex: 1;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+  outline: none;
+  
+  &:focus {
+    border-color: $color-primary;
+  }
+}
+
+.chatbot__send {
+  background-color: $color-primary;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin-left: $spacing-sm;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color $transition-fast;
+  
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+.chatbot__toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: $font-size-xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all $transition-base;
+  z-index: $z-modal;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Contact Form
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: $color-background;
+  border-radius: 12px;
+  padding: $spacing-xl;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form__group {
+  margin-bottom: $spacing-lg;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.form__input,
+.form__textarea {
+  width: 100%;
+  padding: $spacing-md;
+  border: 2px solid $color-border;
+  border-radius: 8px;
+  font-size: $font-size-base;
+  font-family: inherit;
+  transition: border-color $transition-base;
+  
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.form__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form__submit {
+  width: 100%;
+  background-color: $color-primary;
+  color: white;
+  padding: $spacing-md $spacing-lg;
+  border: none;
+  border-radius: 8px;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color $transition-base;
+  
+  &:hover,
+  &:focus {
+    background-color: darken($color-primary, 10%);
+  }
+}

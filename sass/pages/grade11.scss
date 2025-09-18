@@ -1,0 +1,82 @@
+// ===========================================
+// grade11.scss - Grade 11 Styles Entry Point
+// ===========================================
+
+// Import shared styles and components
+@import '../abstracts/_shared';
+
+// Import Grade 11 specific styles
+@import '../themes/_grade11';
+
+// ===========================================
+// Grade 11 Specific Styles
+// ===========================================
+
+// Grade 11 specific utility classes using theme variables
+.grade11-gradient-bg {
+  background: linear-gradient(135deg, $grade11-primary, $grade11-secondary);
+}
+
+.grade11-text-primary {
+  color: $grade11-primary;
+}
+
+.grade11-text-secondary {
+  color: $grade11-secondary;
+}
+
+.grade11-text-accent {
+  color: $grade11-accent;
+}
+
+.grade11-border-primary {
+  border-color: $grade11-primary;
+}
+
+.grade11-border-secondary {
+  border-color: $grade11-secondary;
+}
+
+// Grade 11 specific animations using optimized mixin
+@include pulse-animation($grade11-primary, 'grade11-pulse');
+
+// Grade 11 specific hover effects
+.grade11-hover-card {
+  @include hover-effect(scale(1.02), 0.3s);
+}
+
+// Grade 11 specific button styles
+.btn-grade11 {
+  background: linear-gradient(135deg, $grade11-primary, $grade11-secondary);
+  color: #1f2937;
+  border: none;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-md;
+  font-weight: 600;
+  @include hover-effect(scale(1.05), 0.2s);
+  
+  &:focus {
+    @include focus-ring;
+  }
+}
+
+.grade11-pulse {
+  animation: grade11-pulse 2s infinite;
+}
+
+// ===========================================
+// Compilation Notes
+// ===========================================
+/*
+To compile this file for Grade 11:
+sass sass/grade11.scss css/grade11.css --watch
+
+This file includes:
+1. All base styles and shared components
+2. Grade 11 specific styles from _grade11.scss
+3. Grade 11 specific color overrides
+4. Grade 11 specific utility classes
+5. Grade 11 specific animations
+
+The compiled CSS will be used for the Grade 11 lesson page.
+*/

@@ -1,0 +1,82 @@
+// ===========================================
+// grade9.scss - Grade 9 Styles Entry Point
+// ===========================================
+
+// Import shared styles and components
+@import '../abstracts/_shared';
+
+// Import Grade 9 specific styles
+@import '../themes/_grade9';
+
+// ===========================================
+// Grade 9 Specific Styles
+// ===========================================
+
+// Grade 9 specific utility classes using theme variables
+.grade9-gradient-bg {
+  background: linear-gradient(135deg, $grade9-primary, $grade9-secondary);
+}
+
+.grade9-text-primary {
+  color: $grade9-primary;
+}
+
+.grade9-text-secondary {
+  color: $grade9-secondary;
+}
+
+.grade9-text-accent {
+  color: $grade9-accent;
+}
+
+.grade9-border-primary {
+  border-color: $grade9-primary;
+}
+
+.grade9-border-secondary {
+  border-color: $grade9-secondary;
+}
+
+// Grade 9 specific animations using optimized mixin
+@include pulse-animation($grade9-primary, 'grade9-pulse');
+
+// Grade 9 specific hover effects
+.grade9-hover-card {
+  @include hover-effect(scale(1.02), 0.3s);
+}
+
+// Grade 9 specific button styles
+.btn-grade9 {
+  background: linear-gradient(135deg, $grade9-primary, $grade9-secondary);
+  color: #1f2937;
+  border: none;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-md;
+  font-weight: 600;
+  @include hover-effect(scale(1.05), 0.2s);
+  
+  &:focus {
+    @include focus-ring;
+  }
+}
+
+.grade9-pulse {
+  animation: grade9-pulse 2s infinite;
+}
+
+// ===========================================
+// Compilation Notes
+// ===========================================
+/*
+To compile this file for Grade 9:
+sass sass/grade9.scss css/grade9.css --watch
+
+This file includes:
+1. All base styles and shared components
+2. Grade 9 specific styles from _grade9.scss
+3. Grade 9 specific color overrides
+4. Grade 9 specific utility classes
+5. Grade 9 specific animations
+
+The compiled CSS will be used for the Grade 9 lesson page.
+*/

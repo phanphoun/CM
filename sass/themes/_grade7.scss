@@ -1,0 +1,328 @@
+// ===========================================
+// _grade7.scss - Grade 7 Specific Styles
+// ===========================================
+
+// Grade 7 Theme: Purple Gradient
+// Colors: #667eea to #764ba2
+
+// Grade-specific page header
+.grade7-header {
+  @include gradient-background($grade7-gradient);
+  padding: $spacing-3xl 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="white" fill-opacity="0.1" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+  }
+}
+
+.grade7-header__content {
+  position: relative;
+  z-index: 1;
+}
+
+.grade7-header__title {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  margin-bottom: $spacing-md;
+  
+  @include respond(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.grade7-header__subtitle {
+  font-size: $font-size-xl;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto $spacing-lg;
+  
+  @include respond(md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+// Grade 7 Lesson Cards
+.grade7-lessons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-xl;
+  margin: $spacing-3xl 0;
+}
+
+.grade7-lesson-card {
+  background: white;
+  border-radius: 16px;
+  padding: $spacing-xl;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all $transition-base;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: $grade7-gradient;
+  }
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+  }
+}
+
+.grade7-lesson-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $spacing-lg;
+}
+
+.grade7-lesson-card__title {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: $spacing-sm;
+  flex: 1;
+}
+
+.grade7-lesson-card__duration {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 20px;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.grade7-lesson-card__description {
+  color: $color-text-secondary;
+  margin-bottom: $spacing-lg;
+  line-height: 1.6;
+}
+
+.grade7-lesson-card__topics {
+  list-style: none;
+  margin-bottom: $spacing-xl;
+}
+
+.grade7-lesson-card__topic {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-xs 0;
+  color: $color-text-primary;
+  
+  &::before {
+    content: '▸';
+    color: #667eea;
+    font-weight: bold;
+  }
+}
+
+.grade7-lesson-card__actions {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.grade7-lesson-card__btn {
+  @include button-base;
+  flex: 1;
+  min-width: 120px;
+  
+  &--primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    
+    &:hover {
+      background: linear-gradient(135deg, darken(#667eea, 10%), darken(#764ba2, 10%));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+  }
+  
+  &--outline {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+    
+    &:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Grade 7 Quiz Section
+.grade7-quiz {
+  background: white;
+  border-radius: 16px;
+  padding: $spacing-2xl;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: $spacing-3xl 0;
+}
+
+.grade7-quiz__title {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: #667eea;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.grade7-quiz__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-lg;
+}
+
+.grade7-quiz-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  padding: $spacing-xl;
+  text-align: center;
+  transition: all $transition-base;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+  }
+}
+
+.grade7-quiz-card__icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto $spacing-md;
+  color: white;
+  font-size: $font-size-xl;
+  font-weight: bold;
+}
+
+.grade7-quiz-card__title {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: $spacing-sm;
+}
+
+.grade7-quiz-card__description {
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  line-height: 1.5;
+}
+
+// Grade 7 Progress Tracking
+.grade7-progress {
+  background: white;
+  border-radius: 16px;
+  padding: $spacing-xl;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: $spacing-xl 0;
+}
+
+.grade7-progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+}
+
+.grade7-progress__title {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.grade7-progress__percentage {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.grade7-progress__bar {
+  background: $color-background-alt;
+  border-radius: 10px;
+  height: 12px;
+  overflow: hidden;
+  margin-bottom: $spacing-md;
+}
+
+.grade7-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: width $transition-slow;
+}
+
+// Grade 7 Animations
+@keyframes grade7-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grade7-animate {
+  animation: grade7-fadeIn 0.6s ease forwards;
+}
+
+.grade7-animate-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.grade7-animate-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.grade7-animate-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.grade7-animate-delay-4 {
+  animation-delay: 0.4s;
+}
+
+// Responsive adjustments for Grade 7
+@include respond(sm) {
+  .grade7-lessons {
+    grid-template-columns: 1fr;
+  }
+  
+  .grade7-lesson-card__actions {
+    flex-direction: column;
+  }
+  
+  .grade7-quiz__options {
+    grid-template-columns: 1fr;
+  }
+}

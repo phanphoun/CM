@@ -1,0 +1,47 @@
+// ===========================================
+// main.scss - Main SASS Entry Point
+// ===========================================
+
+// Import all partials in logical order
+
+// 1. Variables and Configuration
+@import 'abstracts/_variables';
+
+// 2. Mixins and Functions
+@import 'abstracts/_mixins';
+
+// 3. Base Styles and Reset
+@import 'base/_base';
+
+// 4. Layout Components
+@import 'layout/_layout';
+
+// 5. Grid System
+@import 'base/_grid';
+
+// 6. Reusable Components
+@import 'components/_components';
+
+// 7. Page Sections
+@import 'layout/_sections';
+
+// ===========================================
+// Compiled Output Notes
+// ===========================================
+/*
+This file compiles all SASS partials into a single CSS file.
+The compilation order ensures proper cascade and specificity:
+
+1. Variables are defined first for use across all files
+2. Mixins are available for all subsequent files
+3. Base styles establish the foundation
+4. Layout components define the main structure
+5. Grid system provides responsive layout utilities
+6. Reusable components can be used throughout
+7. Page sections contain specific area styling
+
+To compile this file, use a SASS compiler:
+sass sass/main.scss style.css --watch
+
+Or use build tools like Webpack, Gulp, or Parcel.
+*/

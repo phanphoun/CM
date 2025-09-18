@@ -1,0 +1,559 @@
+// ===========================================
+// _components.scss - Reusable UI Components
+// ===========================================
+
+// Header and Navigation - BEM Methodology
+.header {
+  background-color: $color-background;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-sticky;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md 0;
+}
+
+.nav__brand {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: $color-primary;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav__brand-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.nav__menu {
+  display: flex;
+  list-style: none;
+  gap: $spacing-lg;
+  align-items: center;
+}
+
+.nav__mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: $font-size-xl;
+  color: $color-primary;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@include respond(md) {
+  .nav__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: $spacing-md;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: $z-dropdown;
+    border-radius: 0 0 12px 12px;
+    
+    // Mobile menu items
+    .nav__item {
+      width: 100%;
+      
+      .nav__link {
+        width: 100%;
+        text-align: left;
+        padding: $spacing-md;
+        border-radius: 8px;
+        justify-content: flex-start;
+      }
+    }
+    
+    // Mobile dropdown behavior
+    .nav__dropdown {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      background: transparent;
+      margin-left: $spacing-lg;
+      margin-top: $spacing-xs;
+      margin-bottom: $spacing-xs;
+      
+      .nav__dropdown-link {
+        padding: $spacing-sm $spacing-md;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+  
+  .nav__mobile-toggle {
+    display: block;
+    padding: $spacing-sm;
+    border-radius: 8px;
+    transition: all $transition-fast;
+    
+    &:hover {
+      background-color: $color-background-alt;
+    }
+    
+    &.active {
+      background-color: $color-primary;
+      color: white;
+    }
+  }
+  
+  .nav__menu.active {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+}
+
+// Small mobile screens
+@include respond(sm) {
+  .nav {
+    padding: $spacing-sm 0;
+  }
+  
+  .nav__brand {
+    font-size: $font-size-xl;
+    
+    .nav__brand-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  
+  .nav__auth {
+    .btn {
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-sm;
+      min-height: 36px;
+    }
+  }
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  color: $color-text-primary;
+  font-weight: 600;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 8px;
+  transition: all $transition-base;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav__link:hover,
+.nav__link:focus,
+.nav__link--active {
+  color: $color-primary;
+  background-color: $color-background-alt;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+// Dropdown Menu Implementation
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $color-background;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all $transition-base;
+  z-index: $z-dropdown;
+}
+
+.nav__item:hover .nav__dropdown,
+.nav__item:focus-within .nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav__dropdown-list {
+  list-style: none;
+  padding: $spacing-sm 0;
+}
+
+.nav__dropdown-item {
+  padding: 0;
+}
+
+.nav__dropdown-link {
+  display: block;
+  padding: $spacing-sm $spacing-md;
+  color: $color-text-primary;
+  font-weight: 500;
+  transition: background-color $transition-fast;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav__dropdown-link:hover,
+.nav__dropdown-link:focus {
+  background-color: $color-background-alt;
+  text-decoration: none;
+  color: $color-primary;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+// Authentication Buttons
+.nav__auth {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: center;
+
+  // Make auth buttons more prominent
+  .btn {
+    padding: $spacing-md $spacing-lg; // Increased height: 16px 24px
+    font-size: $font-size-base; // Increased font size
+    font-weight: 700; // Bolder text
+    min-height: 48px; // Minimum height for better touch targets
+    
+    @include respond(md) {
+      padding: $spacing-sm $spacing-md; // Slightly smaller on mobile
+      font-size: $font-size-sm;
+      min-height: 40px;
+    }
+  }
+
+  // Mobile responsive behavior
+  @include respond(md) {
+    flex-direction: column;
+    gap: $spacing-xs;
+    width: 100%;
+    padding: $spacing-sm 0;
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// Button Components
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  white-space: nowrap;
+  min-height: 40px;
+  
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.btn--primary {
+  background-color: $color-primary;
+  color: white;
+  border-color: $color-primary;
+  
+  &:hover,
+  &:focus {
+    background-color: darken($color-primary, 10%);
+    border-color: darken($color-primary, 10%);
+    text-decoration: none;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: $color-primary;
+  border-color: $color-primary;
+  
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+}
+
+.btn--secondary {
+  background-color: $color-secondary;
+  color: white;
+  border-color: $color-secondary;
+  
+  &:hover,
+  &:focus {
+    background-color: darken($color-secondary, 10%);
+    border-color: darken($color-secondary, 10%);
+    text-decoration: none;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+.btn--accent {
+  background-color: $color-accent;
+  color: white;
+  border-color: $color-accent;
+  
+  &:hover,
+  &:focus {
+    background-color: darken($color-accent, 10%);
+    border-color: darken($color-accent, 10%);
+    text-decoration: none;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+.btn--small {
+  padding: $spacing-xs $spacing-md;
+  font-size: $font-size-sm;
+}
+
+.btn--large {
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-size-lg;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+// Card Components
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: $spacing-lg;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all $transition-base;
+  border: 1px solid $color-border;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card__header {
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-md;
+  border-bottom: 1px solid $color-border;
+}
+
+.card__title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.card__subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.card__body {
+  margin-bottom: $spacing-md;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-md;
+  border-top: 1px solid $color-border;
+}
+
+// Form Components
+.form-group {
+  margin-bottom: $spacing-md;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: $spacing-sm;
+  color: $color-text-primary;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 2px solid $color-border;
+  border-radius: 8px;
+  font-size: $font-size-base;
+  transition: all $transition-base;
+  background-color: white;
+  
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+  }
+  
+  &::placeholder {
+    color: $color-text-light;
+  }
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-select {
+  cursor: pointer;
+}
+
+.form-checkbox,
+.form-radio {
+  margin-right: $spacing-sm;
+}
+
+.form-help {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-top: $spacing-xs;
+}
+
+.form-error {
+  color: $color-secondary;
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+}
+
+// Alert Components
+.alert {
+  padding: $spacing-md $spacing-lg;
+  border-radius: 8px;
+  margin-bottom: $spacing-md;
+  border-left: 4px solid;
+}
+
+.alert--success {
+  background-color: rgba($color-accent, 0.1);
+  border-left-color: $color-accent;
+  color: darken($color-accent, 20%);
+}
+
+.alert--error {
+  background-color: rgba($color-secondary, 0.1);
+  border-left-color: $color-secondary;
+  color: darken($color-secondary, 10%);
+}
+
+.alert--warning {
+  background-color: rgba($color-warning, 0.1);
+  border-left-color: $color-warning;
+  color: darken($color-warning, 20%);
+}
+
+.alert--info {
+  background-color: rgba($color-info, 0.1);
+  border-left-color: $color-info;
+  color: darken($color-info, 20%);
+}
+
+// Badge Components
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 9999px;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge--primary {
+  background-color: $color-primary;
+  color: white;
+}
+
+.badge--secondary {
+  background-color: $color-secondary;
+  color: white;
+}
+
+.badge--accent {
+  background-color: $color-accent;
+  color: white;
+}
+
+.badge--warning {
+  background-color: $color-warning;
+  color: white;
+}
+
+.badge--info {
+  background-color: $color-info;
+  color: white;
+}
+
+// Progress Components
+.progress {
+  width: 100%;
+  height: 8px;
+  background-color: $color-border;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: $color-primary;
+  border-radius: 4px;
+  transition: width $transition-base;
+}
+
+.progress-bar--success {
+  background-color: $color-accent;
+}
+
+.progress-bar--warning {
+  background-color: $color-warning;
+}
+
+.progress-bar--error {
+  background-color: $color-secondary;
+}

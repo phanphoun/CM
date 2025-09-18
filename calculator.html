@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ម៉ាស៊ីនគិតលេខ - គណិតវិទ្យាខ្មែរ</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <meta name="description" content="ម៉ាស៊ីនគិតលេខគណិតវិទ្យាដែលអាចដោះស្រាយលំហាត់គណិតវិទ្យាគ្រប់កម្រិត">
+    <meta name="keywords" content="ម៉ាស៊ីនគិតលេខ, គណិតវិទ្យា, ដោះស្រាយលំហាត់, គណិតវិទ្យាខ្មែរ">
+</head>
+<body>
+    <!-- Fixed Header with Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="nav__brand" aria-label="Khmer Math - Home">
+                    <div class="nav__brand-icon">គ</div>
+                    <span>Khmer Math</span>
+                </a>
+                
+                <ul class="nav__menu" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="index.html" class="nav__link" role="menuitem">ទំព័រដើម</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="index.html#grades" class="nav__link" role="menuitem" aria-haspopup="true">ថ្នាក់រៀន</a>
+                        <div class="nav__dropdown" role="menu" aria-label="Grade levels">
+                            <ul class="nav__dropdown-list">
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade7.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៧</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade8.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៨</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade9.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៩</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade10.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១០</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade11.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១១</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade12.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១២</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="calculator.html" class="nav__link nav__link--active" role="menuitem">ម៉ាស៊ីនគិតលេខ</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="index.html#progress" class="nav__link" role="menuitem">ប្រសិទ្ធភាព</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="index.html#contact" class="nav__link" role="menuitem">ទំនាក់ទំនង</a>
+                    </li>
+                </ul>
+                
+                <button class="nav__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">ម៉ាស៊ីនគិតលេខគណិតវិទ្យា</h1>
+                <p class="page-header__subtitle">ឧបករណ៍ជំនួយដោះស្រាយលំហាត់គណិតវិទ្យាគ្រប់កម្រិត</p>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="section">
+            <div class="container">
+                <!-- Mode Selection -->
+                <div class="mode-selection">
+                    <h2 class="section__title">ជ្រើសរើសរបៀបគណនា</h2>
+                    <div class="mode-buttons">
+                        <button class="mode-btn active" data-mode="basic">គណនាមូលដ្ឋាន</button>
+                        <button class="mode-btn" data-mode="algebra">ពហុធា និង សមីការ</button>
+                        <button class="mode-btn" data-mode="geometry">ធរណីមាត្រ</button>
+                        <button class="mode-btn" data-mode="trigonometry">ត្រីកោណមាត្រ</button>
+                        <button class="mode-btn" data-mode="calculus">កាល្គុយល៉ុស</button>
+                        <button class="mode-btn" data-mode="statistics">ស្ថិតិ</button>
+                    </div>
+                </div>
+
+                <!-- Basic Calculator -->
+                <div class="calculator-section active" id="basic-calculator">
+                    <div class="calculator-container">
+                        <div class="calculator-display">
+                            <input type="text" id="basic-display" readonly placeholder="0">
+                        </div>
+                        <div class="calculator-buttons">
+                            <button class="calc-btn" onclick="clearDisplay('basic')">C</button>
+                            <button class="calc-btn" onclick="deleteLast('basic')">⌫</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '/')">/</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '*')">×</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '7')">7</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '8')">8</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '9')">9</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '-')">-</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '4')">4</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '5')">5</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '6')">6</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '+')">+</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '1')">1</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '2')">2</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '3')">3</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '.')">.</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '0')">0</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', '(')">(</button>
+                            <button class="calc-btn" onclick="appendToDisplay('basic', ')')">)</button>
+                            <button class="calc-btn equals" onclick="calculateBasic()">=</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algebra Calculator -->
+                <div class="calculator-section" id="algebra-calculator">
+                    <div class="solver-container">
+                        <h3>ដោះស្រាយសមីការ</h3>
+                        <div class="input-group">
+                            <label for="equation-input">បញ្ចូលសមីការ:</label>
+                            <input type="text" id="equation-input" placeholder="ឧទាហរណ៍: 2x + 5 = 15">
+                            <button class="btn btn--primary" onclick="solveEquation()">ដោះស្រាយ</button>
+                        </div>
+                        <div class="result-container">
+                            <h4>លទ្ធផល:</h4>
+                            <div id="equation-result" class="result-display"></div>
+                        </div>
+                    </div>
+
+                    <div class="solver-container">
+                        <h3>ពហុធា</h3>
+                        <div class="input-group">
+                            <label for="polynomial-input">បញ្ចូលពហុធា:</label>
+                            <input type="text" id="polynomial-input" placeholder="ឧទាហរណ៍: x^2 - 5x + 6">
+                            <button class="btn btn--primary" onclick="factorPolynomial()">រកកត្តា</button>
+                        </div>
+                        <div class="result-container">
+                            <h4>លទ្ធផល:</h4>
+                            <div id="polynomial-result" class="result-display"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geometry Calculator -->
+                <div class="calculator-section" id="geometry-calculator">
+                    <div class="solver-grid">
+                        <div class="solver-container">
+                            <h3>រង្វង់</h3>
+                            <div class="input-group">
+                                <label for="circle-radius">កាំរង្វង់ (r):</label>
+                                <input type="number" id="circle-radius" placeholder="បញ្ចូលកាំ">
+                                <button class="btn btn--primary" onclick="calculateCircle()">គណនា</button>
+                            </div>
+                            <div class="result-container">
+                                <h4>លទ្ធផល:</h4>
+                                <div id="circle-result" class="result-display"></div>
+                            </div>
+                        </div>
+
+                        <div class="solver-container">
+                            <h3>ត្រីកោណ</h3>
+                            <div class="input-group">
+                                <label for="triangle-base">មូលដ្ឋាន (b):</label>
+                                <input type="number" id="triangle-base" placeholder="បញ្ចូលមូលដ្ឋាន">
+                                <label for="triangle-height">កម្ពស់ (h):</label>
+                                <input type="number" id="triangle-height" placeholder="បញ្ចូលកម្ពស់">
+                                <button class="btn btn--primary" onclick="calculateTriangle()">គណនា</button>
+                            </div>
+                            <div class="result-container">
+                                <h4>លទ្ធផល:</h4>
+                                <div id="triangle-result" class="result-display"></div>
+                            </div>
+                        </div>
+
+                        <div class="solver-container">
+                            <h3>ចតុកោណកែង</h3>
+                            <div class="input-group">
+                                <label for="rectangle-length">ប្រវែង (l):</label>
+                                <input type="number" id="rectangle-length" placeholder="បញ្ចូលប្រវែង">
+                                <label for="rectangle-width">ទទឹង (w):</label>
+                                <input type="number" id="rectangle-width" placeholder="បញ្ចូលទទឹង">
+                                <button class="btn btn--primary" onclick="calculateRectangle()">គណនា</button>
+                            </div>
+                            <div class="result-container">
+                                <h4>លទ្ធផល:</h4>
+                                <div id="rectangle-result" class="result-display"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trigonometry Calculator -->
+                <div class="calculator-section" id="trigonometry-calculator">
+                    <div class="solver-grid">
+                        <div class="solver-container">
+                            <h3>ត្រីកោណមាត្រមូលដ្ឋាន</h3>
+                            <div class="input-group">
+                                <label for="trig-angle">មុំ (អង្សារ):</label>
+                                <input type="number" id="trig-angle" placeholder="បញ្ចូលមុំ">
+                                <button class="btn btn--primary" onclick="calculateTrigBasic()">គណនា</button>
+                            </div>
+                            <div class="result-container">
+                                <h4>លទ្ធផល:</h4>
+                                <div id="trig-basic-result" class="result-display"></div>
+                            </div>
+                        </div>
+
+                        <div class="solver-container">
+                            <h3>ច្បាប់ស៊ីនុស</h3>
+                            <div class="input-group">
+                                <label for="law-sides">ជ្រុង a, b, c:</label>
+                                <input type="text" id="law-sides" placeholder="ឧទាហរណ៍: 3,4,5">
+                                <label for="law-angles">មុំ A, B, C:</label>
+                                <input type="text" id="law-angles" placeholder="ឧទាហរណ៍: 30,60,90">
+                                <button class="btn btn--primary" onclick="applyLawOfSines()">គណនា</button>
+                            </div>
+                            <div class="result-container">
+                                <h4>លទ្ធផល:</h4>
+                                <div id="law-sines-result" class="result-display"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculus Calculator -->
+                <div class="calculator-section" id="calculus-calculator">
+                    <div class="solver-container">
+                        <h3>ដេរីវេ</h3>
+                        <div class="input-group">
+                            <label for="derivative-input">អនុគមន៍:</label>
+                            <input type="text" id="derivative-input" placeholder="ឧទាហរណ៍: x^2 + 3x - 2">
+                            <button class="btn btn--primary" onclick="calculateDerivative()">គណនាដេរីវេ</button>
+                        </div>
+                        <div class="result-container">
+                            <h4>លទ្ធផល:</h4>
+                            <div id="derivative-result" class="result-display"></div>
+                        </div>
+                    </div>
+
+                    <div class="solver-container">
+                        <h3>អាំងតេក្រាល់</h3>
+                        <div class="input-group">
+                            <label for="integral-input">អនុគមន៍:</label>
+                            <input type="text" id="integral-input" placeholder="ឧទាហរណ៍: x^2 + 3x - 2">
+                            <button class="btn btn--primary" onclick="calculateIntegral()">គណនាអាំងតេក្រាល់</button>
+                        </div>
+                        <div class="result-container">
+                            <h4>លទ្ធផល:</h4>
+                            <div id="integral-result" class="result-display"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Calculator -->
+                <div class="calculator-section" id="statistics-calculator">
+                    <div class="solver-container">
+                        <h3>ស្ថិតិមូលដ្ឋាន</h3>
+                        <div class="input-group">
+                            <label for="stats-input">បញ្ចូលលេខ (បំបែកដោយក្បៀស):</label>
+                            <input type="text" id="stats-input" placeholder="ឧទាហរណ៍: 1,2,3,4,5">
+                            <button class="btn btn--primary" onclick="calculateStatistics()">គណនាស្ថិតិ</button>
+                        </div>
+                        <div class="result-container">
+                            <h4>លទ្ធផល:</h4>
+                            <div id="stats-result" class="result-display"></div>
+                        </div>
+                    </div>
+
+                    <div class="solver-container">
+                        <h3>ប្រូបាបលីតេ</h3>
+                        <div class="input-group">
+                            <label for="prob-success">លទ្ធផលជោគជ័យ (p):</label>
+                            <input type="number" id="prob-success" placeholder="0.5" step="0.01" min="0" max="1">
+                            <label for="prob-trials">ចំនួនព្យាករណ៍ (n):</label>
+                            <input type="number" id="prob-trials" placeholder="10" min="1">
+                            <button class="btn btn--primary" onclick="calculateProbability()">គណនាប្រូបាបលីតេ</button>
+                        </div>
+                        <div class="result-container">
+                            <h4>លទ្ធផល:</h4>
+                            <div id="prob-result" class="result-display"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section__title">ជំនួយក្នុងការប្រើប្រាស់</h2>
+                <div class="help-grid">
+                    <div class="help-card">
+                        <h3>គណនាមូលដ្ឋាន</h3>
+                        <p>ប្រើប្រាស់ដូចម៉ាស៊ីនគិតលេខធម្មតា ដោយចុចលើប៊ូតុងលេខ និងសញ្ញាប្រមាណវិធី។</p>
+                    </div>
+                    <div class="help-card">
+                        <h3>ពហុធា និង សមីការ</h3>
+                        <p>បញ្ចូលសមីការឬពហុធាដោយប្រើអក្សរ x ជាអញ្ញាតិ ហើយចុចប៊ូតុងដោះស្រាយ។</p>
+                    </div>
+                    <div class="help-card">
+                        <h3>ធរណីមាត្រ</h3>
+                        <p>បញ្ចូលវិមាត្ររបស់រូបរាងធរណីមាត្រ ហើយទទួលបានលទ្ធផលផ្ទៃក្រឡា និងបរិមាត្រ។</p>
+                    </div>
+                    <div class="help-card">
+                        <h3>ត្រីកោណមាត្រ</h3>
+                        <p>បញ្ចូលមុំក្នុងឯកតាអង្សារ ឬប្រើច្បាប់ស៊ីនុសសម្រាប់ត្រីកោណ។</p>
+                    </div>
+                    <div class="help-card">
+                        <h3>កាល្គុយល៉ុស</h3>
+                        <p>បញ្ចូលអនុគមន៍គណិតវិទ្យាដើម្បីគណនាដេរីវេ ឬអាំងតេក្រាល់។</p>
+                    </div>
+                    <div class="help-card">
+                        <h3>ស្ថិតិ</h3>
+                        <p>បញ្ចូលបណ្តុំលេខដោយបំបែកជាមួយក្បៀស ដើម្បីគណនាមធ្យម មេដ្យាន និងតម្លៃស្ថិតិផ្សេងទៀត។</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Khmer Math</h3>
+                    <p>វេទិការៀនគណិតវិទ្យាជាភាសាខ្មែរសម្រាប់ថ្នាក់ទី៧ ដល់ ថ្នាក់ទី១២</p>
+                </div>
+                <div class="footer__section">
+                    <h4>តំណភ្ជាប់រហ័ស</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">ទំព័រដើម</a></li>
+                        <li><a href="calculator.html">ម៉ាស៊ីនគិតលេខ</a></li>
+                        <li><a href="index.html#grades">ថ្នាក់រៀន</a></li>
+                        <li><a href="index.html#contact">ទំនាក់ទំនង</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>ទំនាក់ទំនង</h4>
+                    <p>អាសយដ្ឋាន: ភ្នំពេញ, កម្ពុជា</p>
+                    <p>អ៊ីមែល: info@khmermath.com</p>
+                    <p>ទូរស័ព្ទ: +855 12 345 678</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Khmer Math. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
