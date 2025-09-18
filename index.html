@@ -57,14 +57,9 @@
                         <a href="#about" class="nav__link" role="menuitem">អំពីយើង</a>
                     </li>
                     <li class="nav__item" role="none">
-                        <a href="#contact" class="nav__link" role="menuitem">ទំនាក់ទំនង</a>
+                        <a href="resources.html" class="nav__link" role="menuitem">ធនធាន</a>
                     </li>
                 </ul>
-                
-                <div class="nav__auth">
-                    <a href="#login" class="btn btn--outline" role="button">ចូលប្រើ</a>
-                    <a href="#register" class="btn btn--primary" role="button">ចុះឈ្មោះ</a>
-                </div>
                 
                 <button class="nav__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                     ☰
@@ -154,83 +149,52 @@
             </div>
         </section>
 
-        <!-- Quiz & Exercise Section -->
-        <section id="quiz" class="section section--alt">
+        <!-- Resources Section -->
+        <section id="resources" class="section section--alt">
             <div class="container">
-                <h2 class="section__title">លំហាត់ និង ការធ្វើតេស្ត</h2>
+                <h2 class="section__title">ធនធានគណិតវិទ្យា</h2>
                 <p class="section__subtitle">
-                    ធ្វើតេស្តជំនាញគណិតវិទ្យារបស់អ្នក ជាមួយនឹងសំណួរអន្តរកម្ម
+                    ស្វែងរកធនធានសិក្សាគណិតវិទ្យាដែលមានប្រយោជន៍សម្រាប់អ្នក
                 </p>
                 
-                <div class="quiz">
-                    <article class="quiz__question" role="article">
-                        <h3 class="quiz__question-title">សំណួរទី១: គណនាតម្លៃនៃ x ក្នុងសមីការ 2x + 5 = 15</h3>
-                        <form>
-                            <ul class="quiz__options" role="group" aria-labelledby="question-1">
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q1" value="5" class="quiz__option-input">
-                                        <span>A) x = 5</span>
-                                    </label>
-                                </li>
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q1" value="10" class="quiz__option-input">
-                                        <span>B) x = 10</span>
-                                    </label>
-                                </li>
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q1" value="7" class="quiz__option-input">
-                                        <span>C) x = 7</span>
-                                    </label>
-                                </li>
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q1" value="3" class="quiz__option-input">
-                                        <span>D) x = 3</span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </form>
-                    </article>
+                <div class="text-center">
+                    <p class="mb-4">
+                        យើងបានរៀបចំធនធានគណិតវិទ្យាជាច្រើនដូចជា៖ ឯកសារ PDF វីដេអូបង្រៀន ឧបករណ៍គណនា និងសន្លឹកលំហាត់អនុវត្តដើម្បីជួយអ្នកក្នុងការសិក្សា។
+                    </p>
+                    <a href="resources.html" class="btn btn--primary btn--large">
+                        មើលធនធានទាំងអស់
+                    </a>
+                </div>
+                
+                <div class="grid mt-5">
+                    <div class="grid__col grid__col--12 grid__col--md-4">
+                        <div class="feature-card">
+                            <div class="feature-card__icon">📚</div>
+                            <h3 class="feature-card__title">ឯកសារ PDF</h3>
+                            <p class="feature-card__description">
+                                ទាញយកសៀវភៅគណិតវិទ្យាតាមថ្នាក់រៀន
+                            </p>
+                        </div>
+                    </div>
                     
-                    <article class="quiz__question" role="article">
-                        <h3 class="quiz__question-title">សំណួរទី២: ផលលំដាប់នៃ 8² គឺ?</h3>
-                        <form>
-                            <ul class="quiz__options" role="group" aria-labelledby="question-2">
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q2" value="64" class="quiz__option-input">
-                                        <span>A) 64</span>
-                                    </label>
-                                </li>
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q2" value="16" class="quiz__option-input">
-                                        <span>B) 16</span>
-                                    </label>
-                                </li>
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q2" value="32" class="quiz__option-input">
-                                        <span>C) 32</span>
-                                    </label>
-                                </li>
-                                <li class="quiz__option">
-                                    <label class="quiz__option-label">
-                                        <input type="radio" name="q2" value="48" class="quiz__option-input">
-                                        <span>D) 48</span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </form>
-                    </article>
+                    <div class="grid__col grid__col--12 grid__col--md-4">
+                        <div class="feature-card">
+                            <div class="feature-card__icon">🎥</div>
+                            <h3 class="feature-card__title">វីដេអូបង្រៀន</h3>
+                            <p class="feature-card__description">
+                                មើលវីដេអូបង្រៀនដែលងាយស្រួលយល់
+                            </p>
+                        </div>
+                    </div>
                     
-                    <div class="text-center">
-                        <button type="button" class="btn btn--primary" id="submit-quiz">
-                            ដាក់ស្នើរចម្លើយ
-                        </button>
+                    <div class="grid__col grid__col--12 grid__col--md-4">
+                        <div class="feature-card">
+                            <div class="feature-card__icon">🧮</div>
+                            <h3 class="feature-card__title">ឧបករណ៍ប្រើប្រាស់</h3>
+                            <p class="feature-card__description">
+                                ប្រើប្រាស់ឧបករណ៍ជំនួយសម្រាប់គណនា
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -389,56 +353,44 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section section--alt">
+        <!-- Additional Resources Section -->
+        <section id="more-resources" class="section section--alt">
             <div class="container">
-                <h2 class="section__title">ទំនាក់ទំនង</h2>
+                <h2 class="section__title">ធនធានបន្ថែម</h2>
                 <p class="section__subtitle">
-                    មានសំណួរ ឬត្រូវការជំនួយ? សូមទាក់ទងមកយើងខ្ញុំ
+                    រកឃើញធនធានបន្ថែមដើម្បីបង្កើនជំនាញគណិតវិទ្យារបស់អ្នក
                 </p>
                 
-                <form class="contact-form" action="#" method="post">
-                    <div class="form__group">
-                        <label for="contact-name" class="form__label">ឈ្មោះពេញ *</label>
-                        <input type="text" 
-                               id="contact-name" 
-                               name="name" 
-                               class="form__input" 
-                               required 
-                               aria-describedby="name-help">
+                <div class="grid">
+                    <div class="grid__col grid__col--12 grid__col--md-6">
+                        <div class="info-card">
+                            <h3 class="info-card__title">ធនធានសម្រាប់គ្រូ</h3>
+                            <p class="info-card__description">
+                                យើងផ្តល់ជូនធនធានពិសេសសម្រាប់គ្រូបង្រៀនដូចជា៖ ផែនការបង្រៀន សកម្មភាពក្នុងថ្នាក់ និងវិធីសាស្ត្របង្រៀនគណិតវិទ្យា។
+                            </p>
+                            <a href="resources.html#teacher-resources" class="btn btn--outline">ស្វែងយល់បន្ថែម</a>
+                        </div>
                     </div>
-
-                    <div class="form__group">
-                        <label for="contact-email" class="form__label">អ៊ីមែល *</label>
-                        <input type="email" 
-                               id="contact-email" 
-                               name="email" 
-                               class="form__input" 
-                               required 
-                               aria-describedby="email-help">
+                    
+                    <div class="grid__col grid__col--12 grid__col--md-6">
+                        <div class="info-card">
+                            <h3 class="info-card__title">ធនធានសម្រាប់សិស្ស</h3>
+                            <p class="info-card__description">
+                                ធនធានសម្រាប់សិស្សរួមមាន៖ លំហាត់អនុវត្ត ការប្រៀនបន្ថែម និងឧបករណ៍សិក្សាអ៊ីនធឺណិត។
+                            </p>
+                            <a href="resources.html#student-resources" class="btn btn--outline">ស្វែងយល់បន្ថែម</a>
+                        </div>
                     </div>
-
-                    <div class="form__group">
-                        <label for="contact-subject" class="form__label">ប្រធានបទ</label>
-                        <input type="text" 
-                               id="contact-subject" 
-                               name="subject" 
-                               class="form__input">
-                    </div>
-
-                    <div class="form__group">
-                        <label for="contact-message" class="form__label">សារ *</label>
-                        <textarea id="contact-message" 
-                                  name="message" 
-                                  class="form__textarea" 
-                                  required 
-                                  placeholder="សូមសរសេរសាររបស់អ្នកនៅទីនេះ..."></textarea>
-                    </div>
-
-                    <button type="submit" class="form__submit">
-                        ផ្ញើសារ
-                    </button>
-                </form>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="mb-4">
+                        ចង់ទទួលបានធនធានទាំងអស់? ចុចប៊ូតុងខាងក្រោមដើម្បីទៅកាន់ទំព័រធនធានពេញលេញ។
+                    </p>
+                    <a href="resources.html" class="btn btn--primary btn--large">
+                        ទៅកាន់ទំព័រធនធាន
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -508,14 +460,14 @@
                     <ul class="footer__links">
                         <li><a href="#home" class="footer__link">ទំព័រដើម</a></li>
                         <li><a href="#grades" class="footer__link">ថ្នាក់រៀន</a></li>
-                        <li><a href="#quiz" class="footer__link">លំហាត់</a></li>
+                        <li><a href="resources.html" class="footer__link">ធនធាន</a></li>
                         <li><a href="#about" class="footer__link">អំពីយើង</a></li>
                     </ul>
                 </div>
                 <div class="footer__section">
                     <h3>ជំនួយ</h3>
                     <ul class="footer__links">
-                        <li><a href="#contact" class="footer__link">ទំនាក់ទំនង</a></li>
+                        <li><a href="resources.html" class="footer__link">ធនធាន</a></li>
                         <li><a href="#" class="footer__link">FAQ</a></li>
                         <li><a href="#" class="footer__link">គាំទ្របច្ចេកទេស</a></li>
                         <li><a href="#" class="footer__link">ការកែប្រែ</a></li>

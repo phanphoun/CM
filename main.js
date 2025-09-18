@@ -531,10 +531,13 @@
             constructor() {
                 this.menuToggle = document.querySelector('.nav__mobile-toggle');
                 this.navMenu = document.querySelector('.nav__menu');
+                this.header = document.querySelector('.header');
                 this.isOpen = false;
+                this.lastScrollTop = 0;
                 
                 if (this.menuToggle && this.navMenu) {
                     this.initEventListeners();
+                    this.initScrollEffect();
                 }
             }
             
@@ -543,29 +546,79 @@
                 
                 // Close menu when clicking outside
                 document.addEventListener('click', (e) => {
-                    if (!this.menuToggle.contains(e.target) && !this.navMenu.contains(e.target)) {
+                    if (!this.header.contains(e.target) && this.isOpen) {
                         this.closeMenu();
                     }
                 });
                 
-                // Close menu when clicking on a link
-                this.navMenu.querySelectorAll('.nav__link').forEach(link => {
-                    link.addEventListener('click', () => this.closeMenu());
+                // Close menu when clicking on links
+                const navLinks = this.navMenu.querySelectorAll('.nav__link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        this.closeMenu();
+                    });
+                });
+                
+                // Handle escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.closeMenu();
+                    }
+                });
+            }
+            
+            initScrollEffect() {
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Add scrolled class to header when scrolling down
+                    if (scrollTop > 50) {
+                        this.header.classList.add('scrolled');
+                    } else {
+                        this.header.classList.remove('scrolled');
+                    }
+                    
+                    // Hide/show header on scroll
+                    if (scrollTop > this.lastScrollTop && scrollTop > 100) {
+                        // Scrolling down
+                        this.header.style.transform = 'translateY(-100%)';
+                    } else {
+                        // Scrolling up
+                        this.header.style.transform = 'translateY(0)';
+                    }
+                    
+                    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
                 });
             }
             
             toggleMenu() {
                 this.isOpen = !this.isOpen;
-                this.navMenu.classList.toggle('active', this.isOpen);
-                this.menuToggle.setAttribute('aria-expanded', this.isOpen);
-                this.menuToggle.textContent = this.isOpen ? '✕' : '☰';
+                
+                if (this.isOpen) {
+                    this.openMenu();
+                } else {
+                    this.closeMenu();
+                }
+            }
+            
+            openMenu() {
+                this.navMenu.classList.add('active');
+                this.menuToggle.classList.add('active');
+                this.menuToggle.setAttribute('aria-expanded', 'true');
+                this.menuToggle.innerHTML = '✕';
+                document.body.style.overflow = 'hidden';
+                
+                // Add animation classes
+                this.navMenu.style.animation = 'slideDown 0.3s ease-out';
             }
             
             closeMenu() {
                 this.isOpen = false;
                 this.navMenu.classList.remove('active');
-                this.menuToggle.setAttribute('aria-expanded', false);
-                this.menuToggle.textContent = '☰';
+                this.menuToggle.classList.remove('active');
+                this.menuToggle.setAttribute('aria-expanded', 'false');
+                this.menuToggle.innerHTML = '☰';
+                document.body.style.overflow = '';
             }
         }
 

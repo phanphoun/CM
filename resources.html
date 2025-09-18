@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ធនធានគណិតវិទ្យា - Khmer Math Resources</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/resources.css">
+    <meta name="description" content="ធនធានគណិតវិទ្យាខ្មែរ រួមមានឯកសារ PDF វីដេអូ ឧបករណ៍គណនា និងធនធានសិក្សាផ្សេងទៀត">
+    <meta name="keywords" content="Khmer Math Resources, ធនធានគណិតវិទ្យា, PDF, Video, Calculator, Study Materials">
+    <meta name="author" content="Khmer Math Team">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="resources-page">
+    <!-- Fixed Header with Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="nav__brand" aria-label="Khmer Math - Home">
+                    <div class="nav__brand-icon">គ</div>
+                    <span>Khmer Math</span>
+                </a>
+                
+                <ul class="nav__menu" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="index.html#home" class="nav__link" role="menuitem">ទំព័រដើម</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="index.html#grades" class="nav__link" role="menuitem" aria-haspopup="true">ថ្នាក់រៀន</a>
+                        <div class="nav__dropdown" role="menu" aria-label="Grade levels">
+                            <ul class="nav__dropdown-list">
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade7.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៧</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade8.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៨</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade9.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី៩</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade10.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១០</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade11.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១១</a>
+                                </li>
+                                <li class="nav__dropdown-item" role="none">
+                                    <a href="pages/grade12.html" class="nav__dropdown-link" role="menuitem">ថ្នាក់ទី១២</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="calculator.html" class="nav__link" role="menuitem">ម៉ាស៊ីនគិតលេខ</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="index.html#about" class="nav__link" role="menuitem">អំពីយើង</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="resources.html" class="nav__link nav__link--active" role="menuitem">ធនធាន</a>
+                    </li>
+                </ul>
+                
+                <button class="nav__mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main">
+        <!-- Enhanced Hero Section -->
+        <section class="resources-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">ធនធានគណិតវិទ្យា</h1>
+                <p class="hero-subtitle">
+                    ស្វែងរកធនធានសិក្សាគណិតវិទ្យាដែលមានប្រយោជន៍សម្រាប់សិស្សគ្រប់ថ្នាក់
+                </p>
+                <div class="hero-search">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="ស្វែងរកធនធាន...">
+                        <button class="search-button">ស្វែងរក</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resource Categories Navigation -->
+        <nav class="resource-categories">
+            <div class="categories-container">
+                <ul class="categories-list">
+                    <li class="category-item">
+                        <a href="#pdf-resources" class="category-link active">
+                            <span class="category-icon">📚</span>
+                            <span>PDF</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#video-resources" class="category-link">
+                            <span class="category-icon">🎥</span>
+                            <span>វីដេអូ</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#tools-resources" class="category-link">
+                            <span class="category-icon">🧮</span>
+                            <span>ឧបករណ៍</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#worksheets-resources" class="category-link">
+                            <span class="category-icon">📝</span>
+                            <span>លំហាត់</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#teacher-resources" class="category-link">
+                            <span class="category-icon">👨‍🏫</span>
+                            <span>គ្រូ</span>
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#student-resources" class="category-link">
+                            <span class="category-icon">👨‍🎓</span>
+                            <span>សិស្ស</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- PDF Resources Section -->
+        <section id="pdf-resources" class="resource-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">ឯកសារ PDF</h2>
+                    <p class="section-subtitle">
+                        ទាញយកឯកសារ PDF គណិតវិទ្យាដែលបានរៀបចំតាមថ្នាក់រៀន
+                    </p>
+                </div>
+                
+                <!-- Resource Stats -->
+                <div class="resource-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">48</div>
+                        <div class="stat-label">ឯកសារ PDF</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">ថ្នាក់រៀន</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1.2K</div>
+                        <div class="stat-label">ទាញយក</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">ពិន្ទុមធ្យម</div>
+                    </div>
+                </div>
+                
+                <!-- Filter and Sort Controls -->
+                <div class="resource-controls">
+                    <div class="filter-group">
+                        <label class="filter-label">តម្រង់:</label>
+                        <select class="filter-select">
+                            <option>ថ្នាក់រៀនទាំងអស់</option>
+                            <option>ថ្នាក់ទី៧</option>
+                            <option>ថ្នាក់ទី៨</option>
+                            <option>ថ្នាក់ទី៩</option>
+                            <option>ថ្នាក់ទី១០</option>
+                            <option>ថ្នាក់ទី១១</option>
+                            <option>ថ្នាក់ទី១២</option>
+                        </select>
+                    </div>
+                    <div class="sort-group">
+                        <label class="sort-label">តម្រៀប:</label>
+                        <select class="sort-select">
+                            <option>ពេលថ្មីបំផុត</option>
+                            <option>ពេលចាស់បំផុត</option>
+                            <option>ប្រជាប្រិយភាព</option>
+                            <option>ឈ្មោះ A-Z</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="resources-grid">
+                    <article class="resource-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📚</div>
+                            <h3 class="resource-card-title">សៀវភៅថ្នាក់ទី៧</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ឯកសារ PDF ពេញលេញសម្រាប់ថ្នាក់ទី៧ រួមបញ្ចូលទាំងលំហាត់និងចម្លើយ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>2.5 MB</span>
+                            <span>១៥០ ទំព័រ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលលម្អិត</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📚</div>
+                            <h3 class="resource-card-title">សៀវភៅថ្នាក់ទី៨</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ឯកសារ PDF ពេញលេញសម្រាប់ថ្នាក់ទី៨ រួមបញ្ចូលទាំងលំហាត់និងចម្លើយ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>3.2 MB</span>
+                            <span>១៨០ ទំព័រ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលលម្អិត</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📚</div>
+                            <h3 class="resource-card-title">សៀវភៅថ្នាក់ទី៩</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ឯកសារ PDF ពេញលេញសម្រាប់ថ្នាក់ទី៩ រួមបញ្ចូលទាំងលំហាត់និងចម្លើយ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>3.8 MB</span>
+                            <span>២០០ ទំព័រ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលលម្អិត</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📚</div>
+                            <h3 class="resource-card-title">សៀវភៅថ្នាក់ទី១០</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ឯកសារ PDF ពេញលេញសម្រាប់ថ្នាក់ទី១០ រួមបញ្ចូលទាំងលំហាត់និងចម្លើយ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>4.1 MB</span>
+                            <span>២២០ ទំព័រ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលលម្អិត</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📚</div>
+                            <h3 class="resource-card-title">សៀវភៅថ្នាក់ទី១១</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ឯកសារ PDF ពេញលេញសម្រាប់ថ្នាក់ទី១១ រួមបញ្ចូលទាំងលំហាត់និងចម្លើយ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>4.5 MB</span>
+                            <span>២៥០ ទំព័រ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលលម្អិត</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📚</div>
+                            <h3 class="resource-card-title">សៀវភៅថ្នាក់ទី១២</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ឯកសារ PDF ពេញលេញសម្រាប់ថ្នាក់ទី១២ រួមបញ្ចូលទាំងលំហាត់និងចម្លើយ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>5.2 MB</span>
+                            <span>២៨០ ទំព័រ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលលម្អិត</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Resources Section -->
+        <section class="resource-section section-alt">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">វីដេអូបង្រៀន</h2>
+                    <p class="section-subtitle">
+                        មើលវីដេអូបង្រៀនគណិតវិទ្យាដែលងាយស្រួលយល់
+                    </p>
+                </div>
+                
+                <div class="resources-grid">
+                    <article class="resource-card video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://picsum.photos/400/225?random=1" alt="មេរៀនអនុគមន៍ការ៉េ" loading="lazy">
+                            <div class="video-duration">១៥:៤២</div>
+                        </div>
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">🎥</div>
+                            <h3 class="resource-card-title">មេរៀនអនុគមន៍ការ៉េ</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ស្វែងយល់ពីអនុគមន៍ការ៉េ និងរបៀបដោះស្រាយលំហាត់ទាក់ទង
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>១,២៥៤ ដង</span>
+                            <span>២ ថ្ងៃមុន</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">មើល</a>
+                            <a href="#" class="resource-card-button btn-outline">រក្សាទុក</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://picsum.photos/400/225?random=2" alt="មេរៀនធរណីមាត្រ" loading="lazy">
+                            <div class="video-duration">២០:១៥</div>
+                        </div>
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">🎥</div>
+                            <h3 class="resource-card-title">មេរៀនធរណីមាត្រ</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            រៀនពីរូបធរណីមាត្រមូលដ្ឋាន និងការគណនាផ្នែកផ្សេងៗ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>៩៨៧ ដង</span>
+                            <span>៥ ថ្ងៃមុន</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">មើល</a>
+                            <a href="#" class="resource-card-button btn-outline">រក្សាទុក</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://picsum.photos/400/225?random=3" alt="មេរៀនស្ថិតិ" loading="lazy">
+                            <div class="video-duration">១៨:៣០</div>
+                        </div>
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">🎥</div>
+                            <h3 class="resource-card-title">មេរៀនស្ថិតិ</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ស្វែងយល់ពីស្ថិតិមូលដ្ឋាន និងការប្រើប្រាស់ក្នុងជីវភាពប្រចាំថ្ងៃ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>៧៥៦ ដង</span>
+                            <span>១ សប្តាហ៍មុន</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">មើល</a>
+                            <a href="#" class="resource-card-button btn-outline">រក្សាទុក</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://picsum.photos/400/225?random=4" alt="មេរៀនត្រីកោណមិតិ" loading="lazy">
+                            <div class="video-duration">២៥:០០</div>
+                        </div>
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">🎥</div>
+                            <h3 class="resource-card-title">មេរៀនត្រីកោណមិតិ</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            រៀនពីត្រីកោណមិតិ និងការដោះស្រាយលំហាត់ទាក់ទង
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>១,០៩៨ ដង</span>
+                            <span>២ សប្តាហ៍មុន</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">មើល</a>
+                            <a href="#" class="resource-card-button btn-outline">រក្សាទុក</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section class="resource-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">ឧបករណ៍ប្រើប្រាស់</h2>
+                    <p class="section-subtitle">
+                        ឧបករណ៍ជំនួយសម្រាប់ការសិក្សាគណិតវិទ្យា
+                    </p>
+                </div>
+                
+                <div class="resources-grid">
+                    <article class="resource-card tool-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">🧮</div>
+                            <h3 class="resource-card-title">ម៉ាស៊ីនគិតលេខ</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ម៉ាស៊ីនគិតលេខវិទ្យាសាស្ត្រដែលអាចជួយដោះស្រាយលំហាត់គណិតវិទ្យាស្មុគស្មាញ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>ឧបករណ៍អនឡាញ</span>
+                            <span>ឥតគិតថ្លៃ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="calculator.html" class="resource-card-button btn-primary">ប្រើប្រាស់</a>
+                            <a href="#" class="resource-card-button btn-outline">ពត៌មានបន្ថែម</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card tool-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📊</div>
+                            <h3 class="resource-card-title">កម្មវិធីគូសក្រាហ្វិក</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            គូសក្រាហ្វិកអនុគមន៍គណិតវិទ្យាផ្សេងៗ ដើម្បីជួយក្នុងការយល់ដឹង
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>ឧបករណ៍អនឡាញ</span>
+                            <span>ឥតគិតថ្លៃ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ប្រើប្រាស់</a>
+                            <a href="#" class="resource-card-button btn-outline">ពត៌មានបន្ថែម</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card tool-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📐</div>
+                            <h3 class="resource-card-title">ឧបករណ៍ធរណីមាត្រ</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ឧបករណ៍សម្រាប់គណនាផ្ទៃក្រឡា បរិមាត្រ និងមុំផ្សេងៗ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>ឧបករណ៍អនឡាញ</span>
+                            <span>ឥតគិតថ្លៃ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ប្រើប្រាស់</a>
+                            <a href="#" class="resource-card-button btn-outline">ពត៌មានបន្ថែម</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card tool-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">🔢</div>
+                            <h3 class="resource-card-title">កម្មវិធីដោះស្រាយសមីការ</h3>
+                        </div>
+                        <p class="resource-card-description">
+                            ដោះស្រាយសមីការគណិតវិទ្យាដោយស្វ័យប្រវត្តិ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>ឧបករណ៍អនឡាញ</span>
+                            <span>ឥតគិតថ្លៃ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ប្រើប្រាស់</a>
+                            <a href="#" class="resource-card-button btn-outline">ពត៌មានបន្ថែម</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Worksheets Section -->
+        <section class="resource-section section-alt">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">សន្លឹកលំហាត់អនុវត្ត</h2>
+                    <p class="section-subtitle">
+                        ទាញយកសន្លឹកលំហាត់ដើម្បីអនុវត្តការរៀនរបស់អ្នក
+                    </p>
+                </div>
+                
+                <div class="resources-grid">
+                    <article class="resource-card worksheet-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📝</div>
+                            <h3 class="resource-card-title">លំហាត់អនុគមន៍ការ៉េ</h3>
+                            <span class="difficulty-badge medium">មធ្យម</span>
+                        </div>
+                        <p class="resource-card-description">
+                            សន្លឹកលំហាត់អំពីអនុគមន៍ការ៉េ រួមមាន ២០ សំណួរ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>៣០ នាទី</span>
+                            <span>២០ សំណួរ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក PDF</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលគំរូ</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card worksheet-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📝</div>
+                            <h3 class="resource-card-title">លំហាត់ធរណីមាត្រ</h3>
+                            <span class="difficulty-badge easy">ងាយស្រួល</span>
+                        </div>
+                        <p class="resource-card-description">
+                            សន្លឹកលំហាត់អំពីធរណីមាត្រមូលដ្ឋាន រួមមាន ១៥ សំណួរ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>២៥ នាទី</span>
+                            <span>១៥ សំណួរ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក PDF</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលគំរូ</a>
+                        </div>
+                    </article>
+                    
+                    <article class="resource-card worksheet-card">
+                        <div class="resource-card-header">
+                            <div class="resource-card-icon">📝</div>
+                            <h3 class="resource-card-title">លំហាត់ស្ថិតិ</h3>
+                            <span class="difficulty-badge hard">កម្រិតខ្ពស់</span>
+                        </div>
+                        <p class="resource-card-description">
+                            សន្លឹកលំហាត់អំពីស្ថិតិ រួមមាន ២៥ សំណួរ
+                        </p>
+                        <div class="resource-card-meta">
+                            <span>៤៥ នាទី</span>
+                            <span>២៥ សំណួរ</span>
+                        </div>
+                        <div class="resource-card-actions">
+                            <a href="#" class="resource-card-button btn-primary">ទាញយក PDF</a>
+                            <a href="#" class="resource-card-button btn-outline">មើលគំរូ</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>គណិតវិទ្យាខ្មែរ</h3>
+                    <p>ការរៀនគណិតវិទ្យាជាភាសាខ្មែរ ងាយស្រួល និងគួរឱ្យចាប់អារម្មណ៍</p>
+                </div>
+                <div class="footer__section">
+                    <h3>ការតភ្ជាប់រហ័ស</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html#home" class="footer__link">ទំព័រដើម</a></li>
+                        <li><a href="index.html#grades" class="footer__link">ថ្នាក់រៀន</a></li>
+                        <li><a href="resources.html" class="footer__link">ធនធាន</a></li>
+                        <li><a href="index.html#about" class="footer__link">អំពីយើង</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>ជំនួយ</h3>
+                    <ul class="footer__links">
+                        <li><a href="resources.html" class="footer__link">ធនធាន</a></li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                        <li><a href="#" class="footer__link">គាំទ្របច្ចេកទេស</a></li>
+                        <li><a href="#" class="footer__link">ការកែប្រែ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>អាកប្បកិរិយា</h3>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">គោលនយោបាយភាពឯកជន</a></li>
+                        <li><a href="#" class="footer__link">លក្ខខណ្ឌសេវា</a></li>
+                        <li><a href="#" class="footer__link">អំពី Cookie</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; ២០២៥ គណិតវិទ្យាខ្មែរ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Features -->
+    <script src="main.js"></script>
+</body>
+</html>
